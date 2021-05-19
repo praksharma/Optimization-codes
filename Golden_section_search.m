@@ -1,19 +1,20 @@
 clear all
+format short
 % Assumption-the function is unimodal
 
 % Golden section search
 clc
 
-N=10; % maximum iteration
+N=15; % maximum iteration
 a=0;
 fprintf('Xl= %g\n',a)
-b=pi/2;
+b=2;
 fprintf('Xu= %g\n',b)
 K=1.61803398875;
 fprintf('Golden ratio= %g\n',K)
 I=b-a;
 fprintf('I_initial= %g\n',I)
-tol=0.4;
+tol=0.01;
 fprintf('Tolerance= %g\n',tol)
 
 for i=1:N
@@ -29,13 +30,13 @@ for i=1:N
     fprintf('f(Xb)= %g\n',func(b_new))
     % looping
     % for minimization use (<), and for maximization use (>)
-	if func(a_new)>func(b_new)
+	if func(a_new)<func(b_new)
 		b=b_new;
-        disp('f(Xa)>f(Xb)')
+        disp('f(Xa)<f(Xb)')
         
 	else 
 		a=a_new;
-        disp('f(Xa)<f(Xb)')
+        disp('f(Xa)>f(Xb)')
     end
     fprintf('Xl= %g\n',a)
     fprintf('Xu= %g\n',b)
@@ -53,5 +54,5 @@ end
 
 % Function evaluation
 function num1=func(x)
-	num1=4*sin(x).*(1+cos(x));%x^2-8*x+19;
+	num1=4/3*x^3+x^2-8*x+6;%4*sin(x).*(1+cos(x));%x^2-8*x+19;
 end

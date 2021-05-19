@@ -1,8 +1,8 @@
 syms x y
-f=2*x^2+2*y^2+4*x^2*y^2;
+f=3*x^2+6*y^2+4*x^2*y^2+6*x+2;%2*x^2+2*y^2+4*x^2*y^2;
 gradf=gradient(f);
 Hsym=(jacobian(gradient(f)));
-xSample=0:0.1:1;
+xSample=-10:0.1:14;
 ySampleGradient=[];
 ySampleH11=[];
 ySampleH22=[];

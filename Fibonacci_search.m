@@ -4,11 +4,11 @@ clear all
 % Fibonacci function
 clc
 
-N=5;
+N=8;
 fprintf('N= %d\n',N)
-a=0;
+a=-0.25;
 fprintf('Xl= %g\n',a)
-b=20;
+b=6;
 fprintf('Xu= %g\n',b)
 
 I_initial=b-a;
@@ -41,16 +41,16 @@ for i=1:N
 end
 
 function num=fibo(N)
-f=[1,2,3,5,8];
+f=[1,2,3,5,8,13,21,34];
 
     if N==0
-        num=1;
+        num=1
     else
-        num=f(N);
+        num=f(N)
     end
 
 end
 % Function evaluation
 function num1=func(x)
-	num1=x^2-8*x+19;%x^2-10*x+26;
+	num1=4/3*x^3+x^2-8*x+6;%x^2-8*x+19;%x^2-10*x+26;
 end
